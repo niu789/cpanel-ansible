@@ -9,6 +9,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
+    - { name: "traceroute", state: "installed" }
     - { name: "curl", state: "installed" }
     - { name: "wget", state: "installed" }
     - { name: "perl", state: "installed" }

@@ -6,12 +6,17 @@
     path: /etc/sysconfig/network-scripts/ifcfg-{{item}}
   with_items: "{{ ansible_interfaces }}"
 
-- name: Disable NetworkManager Service
-  service:
+- name: Removing NetworkManager Service
+  package:
     name: NetworkManager
-    state: stopped
-    enabled: no
+    state: absent
 
+    #- name: Disable NetworkManager Service
+    #  service:
+    #    name: NetworkManager
+    #    state: stopped
+    #    enabled: no
+    #
 - name: Enable network service
   service:
     name: network

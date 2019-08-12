@@ -26,15 +26,15 @@
 - name: cPanel Package Pre-requisites
   include_tasks: yum.yml
   when: cpanel_installed is not defined
-
-- name: cPanel Folder Structure
-  include_tasks: folders.yml
-  when: cpanel_installed is not defined
-
-- name: cPanel Custom Configs
-  include_tasks: files.yml
-  when: cpanel_installed is not defined
-
+  
+  #- name: cPanel Folder Structure
+  #  include_tasks: folders.yml
+  #  when: cpanel_installed is not defined
+  #
+  #- name: cPanel Custom Configs
+  #  include_tasks: files.yml
+  #  when: cpanel_installed is not defined
+  #
 - name: cPanel Installer Task
   include_tasks: install.yml
   when: cpanel_installed is not defined
